@@ -1,0 +1,19 @@
+name: XcraftAds
+main: de.ardania.xcraftads.XcraftAds
+version: 1.0
+api-version: 1.16
+author: MyNameIsJan
+prefix: XcraftAds
+depend:
+  - Vault
+
+commands:
+  ads:
+
+permissions:
+  xcraftads.help:
+    default: op
+  xcraftads.create:
+    default: op
+  xcraftads.list:
+    default: op
