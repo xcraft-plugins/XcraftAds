@@ -1,45 +1,52 @@
-#XcraftAds
+# XcraftAds
 Ermöglicht dem Spieler eigene Werbung über einen Broadcaster im Chat anzuzeigen.
 
-##Commands
+## Commands
 
-> ###/ads help
+> ### /ads help
 >> zeigt dem Spieler Informationen über die Commands an.
-> ###/ads create \<Nachricht>
+>
+> ### /ads create \<Nachricht>
 >> lässt den Spieler eine Werbung erstellen.
-> ###/ads list
+>
+> ### /ads list
 >> listet dem Spieler seine Werbungen auf.
 
-##Permissions
+## Permissions
 
-> ###/ads help
+> ### /ads help
 >> xcraftads.help 
 >>
 >> default: op
-> ###/ads create \<Nachricht>
+>
+> ### /ads create \<Nachricht>
 >> xcraftads.create
 >>
 >> default: op
-> ###/ads list
+>
+> ### /ads list
 >> xcraftads.list
 >>
 >> default: op
 
-##Configuration
+## Configuration
 
-> ###interval
+> ### interval
 >> Der Interval in dem die Werbungen geschaltet werden in Minuten.
 >>
 >> default: 15
-> ###broadcasts
+>
+> ### broadcasts
 >> Die Anzahl der Broadcasts einer Werbung.
 >>
 >> default: 10
-> ###cost
+>
+> ### cost
 >> Die Kosten für die Schaltung einer Werbung.
 >>
 >> default: 1000
-> ###order
+>
+> ### order
 >> Die Reihenfolge in der die Werbungen geschaltet werden. 
 >> <br>
 >> Mögliche Reihenfolgen sind:
