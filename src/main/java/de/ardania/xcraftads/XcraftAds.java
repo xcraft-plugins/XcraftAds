@@ -34,8 +34,13 @@ public class XcraftAds extends JavaPlugin {
         //Commands & Listeners
         getCommand("ads").setExecutor(commandHandler);
 
-        //starting scheduler
-        schedulerHandler.startScheduler();
+        try {
+            //starting scheduler
+            schedulerHandler.startScheduler();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            getServer().getPluginManager().disablePlugin(PLUGIN);
+        }
     }
 
     @Override
