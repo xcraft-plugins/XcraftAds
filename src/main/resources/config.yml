@@ -1,11 +1,14 @@
 # The interval in which messages will be broadcasted in minutes
 interval: 15
+
 # The total amount of messages that will be broadcasted in interval
-broadcasts: 10
+broadcastCount: 10
+
 # The costs per ad
 cost: 1000
+
 # The order in which the ads are broadcasted
 # Possible values are:
 # random - Broadcasts the ads in a random order
 # sorted - Broadcasts the ads with the most broadcasts left first
-order: "random"
+order: random

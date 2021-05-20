@@ -36,7 +36,7 @@ Ermöglicht dem Spieler eigene Werbung über einen Broadcaster im Chat anzuzeige
 >>
 >> default: 15
 >
-> ### broadcasts
+> ### broadcastCount
 >> Die Anzahl der Broadcasts einer Werbung.
 >>
 >> default: 10
@@ -47,10 +47,10 @@ Ermöglicht dem Spieler eigene Werbung über einen Broadcaster im Chat anzuzeige
 >> default: 1000
 >
 > ### order
->> Die Reihenfolge in der die Werbungen geschaltet werden. 
->> <br>
->> Mögliche Reihenfolgen sind:
->> - "random" – Zufällige Reihenfolge
->> - "sorted" – Die Werbungen mit den meisten broadcasts zuerst
+>> Die Reihenfolge in der die Werbungen geschaltet werden.
+> > <br>
+> > Mögliche Reihenfolgen sind:
+>> - random – Zufällige Reihenfolge
+>> - sorted – Die Werbungen mit den meisten broadcasts zuerst
 >>
->> default: "random"
+>> default: random

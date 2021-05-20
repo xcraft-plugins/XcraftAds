@@ -5,23 +5,28 @@ import de.ardania.xcraftads.persistence.Ad;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
 
 import static de.ardania.xcraftads.XcraftAds.CONFIGHANDLER;
 import static de.ardania.xcraftads.XcraftAds.PLUGIN;
 import static de.ardania.xcraftads.handlers.MessageHandler.MESSAGE;
+import static de.ardania.xcraftads.persistence.Order.RANDOM;
+import static de.ardania.xcraftads.persistence.Order.SORTED;
+import static de.ardania.xcraftads.utils.Registry.LOGGER;
 
 public class SchedulerHandler {
 
     public void startScheduler() {
         PLUGIN.getServer().getScheduler().runTaskTimer(PLUGIN, () -> {
             List<Ad> adList = TaskHandler.loadJson();
-            if (adList.size() > 0) {
-                if (CONFIGHANDLER.getOrder().equals("random")) {
+            if (!adList.isEmpty()) {
+                if (CONFIGHANDLER.getOrder().equals(RANDOM)) {
                     randomBroadcaster(adList);
-                } else if (CONFIGHANDLER.getOrder().equals("sorted")) {
+                } else if (CONFIGHANDLER.getOrder().equals(SORTED)) {
                     sortedBroadcaster(adList);
                 } else {
-                    System.out.println(MESSAGE.getString("ERROR_WRONG_ORDER_STRING"));
+                    randomBroadcaster(adList);
+                    LOGGER.log(Level.WARNING, MESSAGE.getString("ERROR_WRONG_ORDER_STRING"));
                 }
             }
         }, (long) CONFIGHANDLER.getInterval() * 60 * 20, (long) CONFIGHANDLER.getInterval() * 60 * 20);

@@ -33,7 +33,7 @@ public class CreateCommand {
 
             Ad ad = new Ad();
             ad.setMessage(ChatColor.translateAlternateColorCodes('&', stringBuffer.toString()));
-            ad.setBroadcasts(CONFIGHANDLER.getBroadcasts());
+            ad.setBroadcasts(CONFIGHANDLER.getBroadcastCount());
             ad.setUuid(player.getUniqueId());
 
             List<Ad> adList = TaskHandler.loadJson();

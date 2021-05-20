@@ -1,10 +1,7 @@
 package de.ardania.xcraftads.handlers;
 
+import de.ardania.xcraftads.persistence.Order;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.Arrays;
-import java.util.List;
 
 import static de.ardania.xcraftads.XcraftAds.PLUGIN;
 
@@ -32,11 +29,11 @@ public class ConfigHandler {
         return config.getInt("interval");
     }
 
-    public int getBroadcasts() {
-        return config.getInt("broadcasts");
+    public int getBroadcastCount() {
+        return config.getInt("broadcastCount");
     }
 
-    public String getOrder() {
-        return config.getString("order");
+    public Order getOrder() {
+        return Order.getOrderFromString(config.getString("order"));
     }
 }
