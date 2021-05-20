@@ -16,6 +16,8 @@ import static de.ardania.xcraftads.utils.Registry.LOGGER;
 
 public class SchedulerHandler {
 
+    private Random random = new Random();
+
     public void startScheduler() {
         PLUGIN.getServer().getScheduler().runTaskTimer(PLUGIN, () -> {
             List<Ad> adList = TaskHandler.loadJson();
@@ -33,7 +35,7 @@ public class SchedulerHandler {
     }
 
     private void randomBroadcaster(List<Ad> adList) {
-        int index = new Random().nextInt(adList.size());
+        int index = random.nextInt(adList.size());
 
         PLUGIN.getServer().broadcastMessage(adList.get(index).getMessage());
 
