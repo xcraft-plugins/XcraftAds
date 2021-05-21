@@ -34,6 +34,6 @@ public class ConfigHandler {
     }
 
     public Order getOrder() {
-        return Order.getOrderFromString(config.getString("order"));
+        return Order.fromString(config.getString("order"));
     }
 }

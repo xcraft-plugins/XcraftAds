@@ -1,17 +1,18 @@
 package de.ardania.xcraftads.persistence;
 
+import java.util.Arrays;
+import java.util.NoSuchElementException;
+
 public enum Order {
     RANDOM,
-    SORTED,
-    UNKNOWN;
+    SORTED;
 
-    public static Order getOrderFromString(String orderName) {
-        if (RANDOM.name().equalsIgnoreCase(orderName)) {
-            return RANDOM;
-        } else if (SORTED.name().equalsIgnoreCase(orderName)) {
-            return SORTED;
-        } else {
-            return UNKNOWN;
-        }
+    public static Order fromString(String orderName) throws NoSuchElementException {
+        return Arrays.stream(values())
+            .filter(order -> order.name().equalsIgnoreCase(orderName))
+            .findAny()
+            .orElseThrow(
+                () -> new NoSuchElementException("Unknown order \"" + orderName + "\"")
+            );
     }
 }
